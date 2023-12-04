@@ -11,6 +11,15 @@ export default class VálasztásiEredmény {
     #keresztNév: string;
     #pártJel: string;
 
+    // kódtagok:
+    get név(): string {
+        return `${this.#vezetékNév} ${this.#keresztNév}`;
+    }
+
+    get szavazatok(): number {
+        return this.#szavazatok;
+    }
+
     constructor(sor: string) {
         const m: string[] = sor.split(" ");
         this.#kerület = parseInt(m[0]);
